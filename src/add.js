@@ -16,6 +16,7 @@ function add(){
   db.save()
   NAME.value=''
   VALUE.value=''
+  NAME.focus()
 }
 
 CONFIRM.onclick=add

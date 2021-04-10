@@ -1,0 +1,28 @@
+<title>Symbol DB</title>
+<meta charset="utf-8"/>
+<link href="style.css" rel="stylesheet"/>
+<div id='add'>
+  <span>Register a new symbol:</span>
+  <input type='text' id='name' placeholder='Description'/>
+  <input type='text' id='value' placeholder='Symbol'/>
+  <button id='confirm'>Add</button>
+</div>
+<hr/>
+<input type='text' id='search' placeholder='Search...'/>
+<div id='symbols'>
+  <template class='symbol'>
+    <div class='symbol'>
+      <span class='name'></span>
+      <span class='value'></span>
+      <button class='copy'>Copy to clipboard</button>
+      <button class='remove'>Remove</button>
+    </div>
+  </template>
+</div>
+<script type='module'>
+  import './src/add.js'
+  import * as search from './src/search.js'
+  import * as db from './src/db.js'
+  db.load()
+  search.refresh()
+</script>

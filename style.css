@@ -1,0 +1,26 @@
+#add{
+  display:grid;
+  grid-auto-flow:column;
+  align-items:center;
+  justify-items:center;
+}
+#add *{
+  margin:.5em;
+}
+#add input{
+  width:100%;
+}
+#search{
+  width:100%;
+  font:1.5em;
+}
+.symbol{
+  display:grid;
+  grid-auto-flow:column;
+  margin:1em;
+  grid-template-columns:repeat(3,25%);
+  justify-items:center;
+}
+.symbol button{
+  width:100%;
+}

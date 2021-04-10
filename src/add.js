@@ -14,6 +14,8 @@ function add(){
   }
   new symbol.Symbol(n,v)
   db.save()
+  NAME.value=''
+  VALUE.value=''
 }
 
 CONFIRM.onclick=add

@@ -1,6 +1,7 @@
 <title>Symbol DB</title>
 <meta charset="utf-8"/>
-<link href="style.css" rel="stylesheet"/>
+<link href="style/style.css" rel="stylesheet"/>
+<link href="style/preview.css" rel="stylesheet"/>
 <div id='add'>
   <span>Register a new symbol:</span>
   <input type='text' id='name' placeholder='Description'/>
@@ -19,10 +20,11 @@
     </div>
   </template>
 </div>
+<iframe id='preview' class='hidden'></iframe>
 <script type='module'>
   import './src/add.js'
-  import * as search from './src/search.js'
+  import * as view from './src/view.js'
   import * as db from './src/db.js'
   db.load()
-  search.refresh()
+  view.refresh()
 </script>

@@ -1,0 +1,9 @@
+#preview{
+  position:fixed;
+  top:0;
+  left:0;
+  border:none;
+}
+#preview.hidden{
+  display:none;
+}

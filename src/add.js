@@ -7,7 +7,7 @@ const CONFIRM=document.querySelector('#confirm')
 
 function add(){
   let n=NAME.value
-  let v=VALUE.value
+  let v=VALUE.value.trim()
   if(!n||!v){
     window.alert('Name or value left blank!')
     return

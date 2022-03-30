@@ -1,14 +1,15 @@
 import * as symbol from './symbol.js'
-import * as search from './search.js'
+import * as view from './view.js'
 
 const KEY='symbols'
 
 export function save(){
   localStorage.setItem(KEY,JSON.stringify(symbol.SYMBOLS))
-  search.refresh()
+  view.refresh()
 }
 
 export function load(){
-  for(let s of JSON.parse(localStorage.getItem(KEY)))
+  let saved=localStorage.getItem(KEY)
+  if(saved) for(let s of JSON.parse(saved))
     new symbol.Symbol(s.description,s.symbol)
 }

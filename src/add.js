@@ -1,5 +1,6 @@
 import * as symbol from './symbol.js'
 import * as db from './db.js'
+import * as view from './view.js'
 
 const NAME=document.querySelector('#name')
 const VALUE=document.querySelector('#value')
@@ -16,7 +17,7 @@ function add(){
   db.save()
   NAME.value=''
   VALUE.value=''
-  NAME.focus()
+  view.focus()
 }
 
 CONFIRM.onclick=add

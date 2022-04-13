@@ -1,12 +1,12 @@
 import * as symbol from './symbol.js'
 import * as preview from './preview.js'
 
-const TERM=document.querySelector('#search')
+const SEARCH=document.querySelector('#search')
 const SYMBOLS=document.querySelector('#symbols')
 const SYMBOL=document.querySelector('template.symbol').content.children[0]
 
 function search(){
-  let t=TERM.value.toLowerCase()
+  let t=SEARCH.value.toLowerCase()
   return !t?symbol.SYMBOLS:symbol.SYMBOLS.filter(s=>
     s.description.toLowerCase().indexOf(t)>=0||
     s.symbol.toLowerCase().indexOf(t)>=0)
@@ -15,6 +15,7 @@ function search(){
 async function copy(symbol,button){
   await navigator.clipboard.writeText(symbol)
   button.innerHTML='Copied!'
+  focus()
 }
 
 export function refresh(){
@@ -37,5 +38,7 @@ export function refresh(){
   }
 }
 
-TERM.onkeyup=refresh
-TERM.focus()
+export function focus(){SEARCH.focus()}
+
+SEARCH.onkeyup=refresh
+focus()
